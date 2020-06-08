@@ -1,0 +1,152 @@
+/* Header */
+.title {
+  text-align: center;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+}
+
+/* Table */
+.addrTable {
+  width: 100%;
+  text-align: center;
+}
+
+.addrTable thead {
+  font-weight: normal;
+}
+
+.addrTable tbody tr {
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+}
+
+.addrTable tbody tr td{
+  height: 25px;
+}
+
+.addrTable thead tr th{
+  border: 1px solid black;
+}
+
+.rowSelected {
+  background-color: #e2e2e2;
+}
+
+/* Custom */
+.btn-action {
+  padding: 5px 10px;
+  font-weight: bold;
+  color: green;
+  cursor: pointer;
+}
+
+.btn-action:hover {
+  color: red;
+}
+
+/* Width */
+.w5 { width: 5%; }
+.w10 { width: 10%; }
+.w15 { width: 15%; }
+.w20 { width: 20%; }
+.w25 { width: 25%; }
+.w30 { width: 30%; }
+.w35 { width: 35%; }
+.w40 { width: 40%; }
+.w45 { width: 45%; }
+.w50 { width: 50%; }
+.w55 { width: 55%; }
+.w60 { width: 60%; }
+.w65 { width: 65%; }
+.w70 { width: 70%; }
+.w75 { width: 75%; }
+.w80 { width: 80%; }
+.w85 { width: 85%; }
+.w90 { width: 90%; }
+.w95 { width: 95%; }
+.w100 { width: 100%; }
+
+/* Popup */
+
+.popup{
+  background:rgba(0,0,0,.4);
+  cursor:pointer;
+  display:none;
+  height:100%;
+  position:fixed;
+  text-align:center;
+  top:0;
+  width:100%;
+  z-index:10000;
+}
+
+.popup .popAlign{
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+}
+
+.popup > div {
+  background-color: #fff;
+  box-shadow: 10px 10px 60px #555;
+  display: inline-block;
+  height: auto;
+  max-width: 551px;
+  min-height: 100px;
+  vertical-align: middle;
+  width: 60%;
+  position: relative;
+  border-radius: 8px;
+  padding: 15px 5%;
+}
+
+.popClose {
+  background-color: #fff;
+  border: 3px solid #999;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: arial;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.popClose:hover {
+  background-color: #ccc;
+}
+
+.popTitle {
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.popup .content .cell {
+  padding: 5px 5px;
+}
+
+.popup .content .cell label {
+  min-width: 100px;
+  display: inline-block;
+}
+
+.popup .confirm {
+  margin: auto;
+  margin-top: 15px;
+  max-width: 150px;
+  padding: 5px 10px;
+  background-color: #4d4d4d;
+  color: white;
+}
