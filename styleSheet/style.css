@@ -43,6 +43,15 @@
   cursor: pointer;
 }
 
+.btn-action a {
+  color: green;
+  text-decoration: none;
+}
+
+.btn-action a:hover {
+  color: red;
+}
+
 .btn-action:hover {
   color: red;
 }
