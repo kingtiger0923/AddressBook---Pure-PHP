@@ -52,7 +52,9 @@ function editSelected() {
   $('.popup .content .cell #email').val($(cells[3]).text());
   $('.popup .content .cell #street').val($(cells[4]).text());
   $('.popup .content .cell #zipCode').val($(cells[5]).text());
-  $('.popup .content .cell #city').val($(cells[6]).text());
+  $('.popup .content .cell #city option').filter(function () {
+    return $(this).text() == $(cells[6]).text();
+  }).attr('selected', true);
   $('.popup .content .cell #id').val($(cells[7]).text());
   $('.popup .popTitle').html("Edit Address");
 
@@ -66,7 +68,7 @@ function addNew() {
   $('.popup .content .cell #email').val("");
   $('.popup .content .cell #street').val("");
   $('.popup .content .cell #zipCode').val("");
-  $('.popup .content .cell #city').val("");
+  $('.popup .content .cell #city').val(1);
   $('.popup .content .cell #id').val("");
   $('.popup .popTitle').html("Add New Address");
 

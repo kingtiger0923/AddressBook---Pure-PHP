@@ -32,9 +32,6 @@
       $query_str = "INSERT INTO addr_entries (name, firstName, email, street, zip_code, city) VALUES ('".$args->name."', '".$args->firstName."', '".$args->email."', '".$args->street."', '".$args->zipCode."', '".$args->city."')";
       if( mysqli_query($conn, $query_str) == FALSE) {
         $result['error'] = "Failed to Add a new record";
-      } else if( $_POST['func'] == 'XML' ) {
-        
-      } else if( $_POST['func'] == 'JSON' ) {
       }
     } 
   }

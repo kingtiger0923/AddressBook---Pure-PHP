@@ -5,7 +5,7 @@ $config = include "../config.php"; //dataBase Config
 // Open DB
 $conn = openDB($config);
 
-$query_res = mysqli_query($conn, 'SELECT * FROM addr_entries');
+$query_res = mysqli_query($conn, 'SELECT a.id, a.name, a.firstName, a.email, a.street, a.zip_code, c.cityName FROM addr_entries a LEFT JOIN addr_cities c ON a.city = c.id');
 $json_array = [];
 
 while($rc = mysqli_fetch_assoc($query_res)) {

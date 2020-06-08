@@ -5,12 +5,12 @@ $config = include "../config.php"; //dataBase Config
 // Open DB
 $conn = openDB($config);
 
-$query_res = mysqli_query($conn, 'SELECT * FROM addr_entries');
+$query_res = mysqli_query($conn, 'SELECT a.*, c.cityName FROM addr_entries a LEFT JOIN addr_cities c ON a.city = c.id');
 
 $xml = "<AddressBook>";
 
 while($rc = mysqli_fetch_assoc($query_res)) {
-  $xml .= "<Address name='".$rc['name']."' firstName='".$rc['firstName']."' Email='".$rc['email']."' Street='".$rc['street']."' ZipCode='".$rc['zip_code']."' City='".$rc['city']."' />";
+  $xml .= "<Address name='".$rc['name']."' firstName='".$rc['firstName']."' Email='".$rc['email']."' Street='".$rc['street']."' ZipCode='".$rc['zip_code']."' City='".$rc['cityName']."' />";
 }
 
 $xml .= "</AddressBook>";

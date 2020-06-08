@@ -7,7 +7,8 @@ $config = include "config.php"; //dataBase Config
 $conn = openDB($config);
 
 // Get Address Records
-$result = mysqli_query( $conn, 'SELECT * FROM addr_entries' );
+$result = mysqli_query( $conn, 'SELECT a.*, c.cityName FROM addr_entries a LEFT JOIN addr_cities c ON a.city = c.id' );
+$cities = mysqli_query( $conn, 'SELECT * FROM addr_cities' );
 
 // Close DB
 closeDB($conn);
@@ -31,7 +32,11 @@ closeDB($conn);
           <div class="cell"><label for="email">Email : </label><input id="email" name="email" type="text"/></div>
           <div class="cell"><label for="street">Street : </label><input id="street" name="street" type="text"/></div>
           <div class="cell"><label for="zipCode">Zip Code : </label><input id="zipCode" name="zipCode" type="text"/></div>
-          <div class="cell"><label for="city">City : </label><input id="city" name="city" type="text"/></div>
+          <div class="cell"><label for="city">City : </label><select id="city" name="city" type="text">
+          <?php while($rc = mysqli_fetch_assoc($cities)) { ?>
+            <option value="<?= $rc['id'] ?>"><?= $rc['cityName'] ?></option>
+          <?php } ?>
+          </select></div>
           <div class="cell" style="display: none;"><label for="city">Id : </label><input id="id" name="id" type="text"/></div>
           <div class="cell"><div class="confirm" onclick="Confirm();">Confirm</div></div>
         </div>
@@ -72,7 +77,7 @@ closeDB($conn);
                 <td><?= $record['email'] ?></td>
                 <td><?= $record['street'] ?></td>
                 <td><?= $record['zip_code'] ?></td>
-                <td><?= $record['city'] ?></td>
+                <td><?= $record['cityName'] ?></td>
                 <td style="display:none;" class="rcId"><?= $record['id'] ?></td>
               </tr>
               <?php $count++; } ?>
